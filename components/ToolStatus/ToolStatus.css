@@ -1,0 +1,39 @@
+.tool-status {
+  gap: 8px;
+}
+
+.tool-status .pf-v6-c-flex__item,
+.tool-status .pf-m-align-self-center {
+  display: flex;
+  align-items: center;
+}
+
+.tool-status__icon {
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+
+.tool-status__spinner {
+  --pf-v6-c-spinner--diameter: 16px;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+}
+
+.tool-status__icon--success {
+  color: var(--pf-t--global--icon--color--status--success--default);
+}
+
+.tool-status__icon--error {
+  color: var(--pf-t--global--icon--color--status--danger--default);
+}
+
+.tool-status__text {
+  color: var(--pf-t--global--text--color--subtle, #4D4D4D);
+  font-family: var(--pf-t--global--font--family--mono, "Red Hat Mono");
+  font-size: var(--pf-t--global--font--size--body--sm, 0.75rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.125rem; /* 150% */
+}

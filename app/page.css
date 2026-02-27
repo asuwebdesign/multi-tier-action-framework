@@ -1,0 +1,159 @@
+.dark-mode-switch-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.page-main {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-header__subtitle {
+  font-size: 1.125rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-bottom: 0;
+}
+
+.page-section {
+  max-width: 960px;
+  margin: 0 auto 4rem;
+}
+
+.page-section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.page-section-intro {
+  margin-bottom: 2rem;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.page-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-variant-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.variant-description {
+  margin-bottom: 0.5rem;
+}
+
+.variant-description strong {
+  font-size: 1rem;
+}
+
+.variant-description p {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--pf-t--global--text--color--subtle);
+  font-size: 0.875rem;
+}
+
+.tier-description {
+  margin-bottom: 1rem;
+}
+
+.tier-description strong {
+  font-size: 1.125rem;
+}
+
+.tier-description p {
+  margin: 0.25rem 0;
+  color: var(--pf-t--global--text--color--subtle);
+  font-size: 0.875rem;
+}
+
+.status-frame {
+  width: 100%;
+  height: 256px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-frame {
+  width: 100%;
+  background: var(--pf-t--global--background--color--primary--default);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 16px;
+}
+
+.code-expandable {
+  margin-top: 0.5rem;
+}
+
+.code-expandable-large {
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .page-main {
+    padding: 2rem 1rem !important;
+  }
+
+  .page-header {
+    margin-bottom: 2rem !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .page-header__subtitle {
+    font-size: 1rem !important;
+  }
+
+  .page-section {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .page-section h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .page-section-intro {
+    font-size: 0.875rem !important;
+  }
+
+  .page-content-container {
+    gap: 1.5rem !important;
+  }
+
+  .page-variant-container {
+    gap: 2rem !important;
+  }
+
+  .dark-mode-switch-container {
+    margin-bottom: 1.5rem !important;
+  }
+}
