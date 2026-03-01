@@ -51,11 +51,14 @@ A comprehensive approval card component with three risk-based variants:
 
 #### Key Features
 
-- **Expandable Details Section**: Collapsible content area for action specifics
+- **Smooth Expandable Animations**: CSS Grid-based height transitions with fade-in and slide-up effects
+- **Expandable Details Section**: Collapsible content area for action specifics with smooth animations
+- **PatternFly Design Tokens**: Uses PF6 design tokens for spacing, sizing, and colors (no hardcoded values)
 - **Configurable Text**: All labels, titles, descriptions can be customized
 - **Responsive Actions**: Primary/secondary buttons with variant-specific styling
-- **Dark Mode Support**: Full PatternFly theme integration
+- **Dark Mode Support**: Full PatternFly theme integration with automatic adaptation
 - **Truncation Handling**: Long titles truncate gracefully
+- **Local CSS Custom Properties**: Component-specific tokens for easy customization
 
 #### Props Interface
 
@@ -66,11 +69,11 @@ interface ToolCardProps {
   labelText?: string;
   description?: string;
   expandableContent: React.ReactNode;
-  expandableToggleText?: string;
+  expandableToggleText?: string; // Default: "View details"
   disclaimer?: string;
-  checkboxLabel?: string;
-  primaryButtonText?: string;
-  secondaryButtonText?: string;
+  checkboxLabel?: string; // Default: "I understand this action is destructive"
+  primaryButtonText?: string; // Defaults per variant
+  secondaryButtonText?: string; // Default: "Cancel"
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
 }
@@ -142,6 +145,68 @@ multi-tier-action-framework/
 - Import icons from `@patternfly/react-icons`
 - Use PatternFly's Flex/FlexItem for layouts
 - Leverage PatternFly's theme system for dark mode
+- **Design Tokens**: All components use PatternFly 6 design tokens for consistency
+  - Spacing: `--pf-t--global--spacer--sm`, `--pf-t--global--spacer--md`
+  - Typography: `--pf-t--global--font--size--*`, `--pf-t--global--font--family--*`
+  - Colors: `--pf-t--global--color--status--*`, `--pf-t--global--icon--color--*`
+  - No hardcoded pixel values or colors in component styles
+
+### CSS Architecture
+
+Components use a **local token pattern** for maintainability:
+
+```css
+.tool-card {
+  /* Local tokens - component-specific customization */
+  --tool-card--MaxWidth: 400px;
+  --tool-card--Padding: var(--pf-t--global--spacer--md);
+  --tool-card--Gap: var(--pf-t--global--spacer--md);
+  --tool-card--animation--Duration: 0.25s;
+
+  /* Usage */
+  max-width: var(--tool-card--MaxWidth);
+  padding: var(--tool-card--Padding);
+  gap: var(--tool-card--Gap);
+}
+```
+
+**Benefits:**
+
+- Single source of truth for component values
+- Easy theme customization via CSS custom properties
+- Consistent spacing/sizing across all variants
+- PatternFly token integration for theme compatibility
+
+### Animation System
+
+The expandable sections use a **CSS Grid animation technique** for smooth, jitter-free transitions:
+
+**Collapsed State:**
+
+```css
+.pf-v6-c-expandable-section__content {
+  display: grid;
+  grid-template-rows: 0fr; /* Height: 0 */
+  overflow: hidden;
+}
+```
+
+**Expanded State:**
+
+```css
+.pf-m-expanded .pf-v6-c-expandable-section__content {
+  grid-template-rows: 1fr; /* Height: auto-fit content */
+  margin-top: var(--tool-card--Gap);
+}
+```
+
+**Staggered Content Animation:**
+
+- Container expands first (0.25s)
+- Content fades in and slides up after 0.1s delay
+- Smooth cubic-bezier easing throughout
+
+This approach eliminates the jitter caused by animating `max-height` with arbitrary large values.
 
 ### Dark Mode
 
