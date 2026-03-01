@@ -24,7 +24,7 @@ For **low-risk actions** involving external API calls or data retrieval outside 
 
 **Features:**
 
-- Blue informational theme with language icon
+- Purple informational theme with language icon
 - Status label: "External interaction"
 - Built-in disclaimer about reviewing external content
 - Expandable details section

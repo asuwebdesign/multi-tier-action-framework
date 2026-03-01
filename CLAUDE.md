@@ -35,7 +35,7 @@ A comprehensive approval card component with three risk-based variants:
 #### Variants
 
 - **Info Tier**: External interactions (API calls, data retrieval)
-  - Blue theme with language icon
+  - Purple theme with language icon
   - Informational disclaimer
   - No additional confirmation required
 
