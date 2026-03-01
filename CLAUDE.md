@@ -17,6 +17,7 @@ This is a **Next.js 15** application showcasing a context-aware Human-in-the-Loo
 ### Design Philosophy
 
 The framework implements a **progressive governance model** where:
+
 - **Low-risk actions** (external API calls) require minimal oversight
 - **Medium-risk actions** (state changes) require explicit review
 - **High-risk actions** (destructive operations) require acknowledgment via checkbox
@@ -60,7 +61,7 @@ A comprehensive approval card component with three risk-based variants:
 
 ```typescript
 interface ToolCardProps {
-  variant: 'info' | 'warning' | 'danger';
+  variant: "info" | "warning" | "danger";
   title?: string;
   labelText?: string;
   description?: string;
@@ -97,7 +98,7 @@ A simple status indicator for real-time feedback on AI agent operations.
 
 ```typescript
 interface ToolStatusProps {
-  variant: 'loading' | 'success' | 'error';
+  variant: "loading" | "success" | "error";
   label: string;
 }
 ```
@@ -145,6 +146,7 @@ multi-tier-action-framework/
 ### Dark Mode
 
 The application uses PatternFly's built-in theming:
+
 - Add/remove `pf-v6-theme-dark` class on `<html>` element
 - All PatternFly components automatically adapt
 - Custom CSS uses PatternFly CSS variables for consistency
@@ -162,6 +164,7 @@ This framework is designed for:
 ## Future Enhancements
 
 Potential extensions to the framework:
+
 - **Audit Logging**: Track all approval decisions with timestamps
 - **Multi-Step Workflows**: Chain multiple approval tiers
 - **Role-Based Access**: Different approval requirements by user role

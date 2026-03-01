@@ -1,5 +1,9 @@
 .tool-status {
-  gap: 8px;
+  /* Local tokens */
+  --tool-status--Gap: var(--pf-t--global--spacer--sm);
+  --tool-status--icon--Size: var(--pf-t--global--icon--size--font--sm);
+
+  gap: var(--tool-status--Gap);
 }
 
 .tool-status .pf-v6-c-flex__item,
@@ -9,16 +13,16 @@
 }
 
 .tool-status__icon {
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
+  width: var(--tool-status--icon--Size);
+  height: var(--tool-status--icon--Size);
+  font-size: var(--tool-status--icon--Size);
 }
 
 .tool-status__spinner {
-  --pf-v6-c-spinner--diameter: 16px;
-  width: 16px;
-  height: 16px;
-  font-size: 16px;
+  --pf-v6-c-spinner--diameter: var(--tool-status--icon--Size);
+  width: var(--tool-status--icon--Size);
+  height: var(--tool-status--icon--Size);
+  font-size: var(--tool-status--icon--Size);
 }
 
 .tool-status__icon--success {
@@ -30,10 +34,10 @@
 }
 
 .tool-status__text {
-  color: var(--pf-t--global--text--color--subtle, #4D4D4D);
-  font-family: var(--pf-t--global--font--family--mono, "Red Hat Mono");
-  font-size: var(--pf-t--global--font--size--body--sm, 0.75rem);
+  color: var(--pf-t--global--text--color--subtle);
+  font-family: var(--pf-t--global--font--family--mono);
+  font-size: var(--pf-t--global--font--size--body--sm);
   font-style: normal;
-  font-weight: 600;
-  line-height: 1.125rem; /* 150% */
+  font-weight: var(--pf-t--global--font--weight--body--bold);
+  line-height: var(--pf-t--global--line-height--body);
 }

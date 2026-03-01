@@ -23,6 +23,7 @@ The **ToolCard** is the primary approval interface, featuring three risk-based v
 For **low-risk actions** involving external API calls or data retrieval outside the private environment.
 
 **Features:**
+
 - Blue informational theme with language icon
 - Status label: "External interaction"
 - Built-in disclaimer about reviewing external content
@@ -30,12 +31,14 @@ For **low-risk actions** involving external API calls or data retrieval outside 
 - Primary "Continue" button (no additional confirmation required)
 
 **Use Cases:**
+
 - API data fetches
 - Documentation lookups
 - External service queries
 - Read-only operations
 
 **Example:**
+
 ```tsx
 <ToolCard
   variant="info"
@@ -54,6 +57,7 @@ For **low-risk actions** involving external API calls or data retrieval outside 
 For **medium-risk actions** that modify system state or configuration.
 
 **Features:**
+
 - Yellow warning theme with warning icon
 - Status label: "State change"
 - Requires user review before approval
@@ -61,12 +65,14 @@ For **medium-risk actions** that modify system state or configuration.
 - Primary "Apply" button
 
 **Use Cases:**
+
 - Configuration updates
 - Environment variable changes
 - Service restarts
 - Non-destructive state modifications
 
 **Example:**
+
 ```tsx
 <ToolCard
   variant="warning"
@@ -85,6 +91,7 @@ For **medium-risk actions** that modify system state or configuration.
 For **high-risk actions** with potentially destructive or irreversible consequences.
 
 **Features:**
+
 - Red danger theme with error icon
 - Status label: "High risk"
 - **Mandatory checkbox** - primary button is disabled until user acknowledges
@@ -92,6 +99,7 @@ For **high-risk actions** with potentially destructive or irreversible consequen
 - Primary "Approve" button
 
 **Use Cases:**
+
 - Database deletions
 - Cluster teardowns
 - Data purges
@@ -99,6 +107,7 @@ For **high-risk actions** with potentially destructive or irreversible consequen
 - Production deployments with breaking changes
 
 **Example:**
+
 ```tsx
 <ToolCard
   variant="danger"
@@ -114,20 +123,20 @@ For **high-risk actions** with potentially destructive or irreversible consequen
 
 #### ToolCard Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `variant` | `'info' \| 'warning' \| 'danger'` | Yes | Risk tier for the action |
-| `title` | `string` | No | Card title (defaults per variant) |
-| `labelText` | `string` | No | Status label text (defaults per variant) |
-| `description` | `string` | No | Action description (defaults per variant) |
-| `expandableContent` | `React.ReactNode` | Yes | Content shown when expanded |
-| `expandableToggleText` | `string` | No | Toggle text (default: "View action details") |
-| `disclaimer` | `string` | No | Disclaimer text (info variant only) |
-| `checkboxLabel` | `string` | No | Checkbox label (danger variant, default provided) |
-| `primaryButtonText` | `string` | No | Primary button text (defaults per variant) |
-| `secondaryButtonText` | `string` | No | Secondary button text (default: "Cancel") |
-| `onPrimaryClick` | `() => void` | No | Primary button click handler |
-| `onSecondaryClick` | `() => void` | No | Secondary button click handler |
+| Prop                   | Type                              | Required | Description                                       |
+| ---------------------- | --------------------------------- | -------- | ------------------------------------------------- |
+| `variant`              | `'info' \| 'warning' \| 'danger'` | Yes      | Risk tier for the action                          |
+| `title`                | `string`                          | No       | Card title (defaults per variant)                 |
+| `labelText`            | `string`                          | No       | Status label text (defaults per variant)          |
+| `description`          | `string`                          | No       | Action description (defaults per variant)         |
+| `expandableContent`    | `React.ReactNode`                 | Yes      | Content shown when expanded                       |
+| `expandableToggleText` | `string`                          | No       | Toggle text (default: "View details")             |
+| `disclaimer`           | `string`                          | No       | Disclaimer text (info variant only)               |
+| `checkboxLabel`        | `string`                          | No       | Checkbox label (danger variant, default provided) |
+| `primaryButtonText`    | `string`                          | No       | Primary button text (defaults per variant)        |
+| `secondaryButtonText`  | `string`                          | No       | Secondary button text (default: "Cancel")         |
+| `onPrimaryClick`       | `() => void`                      | No       | Primary button click handler                      |
+| `onSecondaryClick`     | `() => void`                      | No       | Secondary button click handler                    |
 
 ### ToolStatus Component
 
@@ -136,35 +145,45 @@ The **ToolStatus** component provides real-time visual feedback on AI agent oper
 #### Variants
 
 **Loading State**
+
 - Animated PatternFly spinner
 - Automatic "..." ellipsis suffix
 - Use for: Ongoing operations, waiting for responses, processing
 
 **Success State**
+
 - Green checkmark icon
 - Use for: Completed operations, successful approvals, confirmed actions
 
 **Error State**
+
 - Red error icon
 - Use for: Failed operations, rejected actions, errors
 
 #### ToolStatus Props
 
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `variant` | `'loading' \| 'success' \| 'error'` | Yes | Status state |
-| `label` | `string` | Yes | Status message text |
+| Prop      | Type                                | Required | Description         |
+| --------- | ----------------------------------- | -------- | ------------------- |
+| `variant` | `'loading' \| 'success' \| 'error'` | Yes      | Status state        |
+| `label`   | `string`                            | Yes      | Status message text |
 
 **Examples:**
+
 ```tsx
-{/* During operation */}
-<ToolStatus variant="loading" label="Analyzing data" />
+{
+  /* During operation */
+}
+<ToolStatus variant="loading" label="Analyzing data" />;
 
-{/* On success */}
-<ToolStatus variant="success" label="Analysis complete" />
+{
+  /* On success */
+}
+<ToolStatus variant="success" label="Analysis complete" />;
 
-{/* On error */}
-<ToolStatus variant="error" label="Action denied" />
+{
+  /* On error */
+}
+<ToolStatus variant="error" label="Action denied" />;
 ```
 
 ## Technology Stack
@@ -257,6 +276,7 @@ This creates an efficient approval workflow that doesn't bottleneck on low-risk 
 ### Context-Aware Design
 
 Each tier provides appropriate context:
+
 - **Expandable sections** show detailed action information
 - **Status labels** communicate risk at a glance
 - **Visual hierarchy** (color, icons) conveys urgency
@@ -265,6 +285,7 @@ Each tier provides appropriate context:
 ### Enterprise UI Standards
 
 Built on PatternFly 6, the framework inherits:
+
 - Accessibility best practices (ARIA labels, keyboard navigation)
 - Consistent design language
 - Professional appearance suitable for enterprise applications
