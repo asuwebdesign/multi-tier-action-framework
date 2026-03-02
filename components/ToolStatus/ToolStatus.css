@@ -2,6 +2,12 @@
   /* Local tokens */
   --tool-status--Gap: var(--pf-t--global--spacer--sm);
   --tool-status--icon--Size: var(--pf-t--global--icon--size--lg);
+  --tool-status--pulse--Duration: calc(
+    4 * var(--pf-t--global--motion--duration--2xl)
+  );
+  --tool-status--pulse--TimingFunction: var(
+    --pf-t--global--motion--timing-function--default
+  );
 
   gap: var(--tool-status--Gap);
 }
@@ -31,6 +37,22 @@
 
 .tool-status__icon--error {
   color: var(--pf-t--global--icon--color--status--danger--default);
+}
+
+.tool-status__icon--pending {
+  color: var(--pf-t--global--text--color--subtle);
+  animation: tool-status-pulse var(--tool-status--pulse--Duration)
+    var(--tool-status--pulse--TimingFunction) infinite;
+}
+
+@keyframes tool-status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
 }
 
 .tool-status__text {

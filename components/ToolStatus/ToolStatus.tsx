@@ -1,9 +1,13 @@
 import React from "react";
 import { Flex, FlexItem, Spinner } from "@patternfly/react-core";
-import { RhUiCheckIcon, RhUiCloseCircleIcon } from "@patternfly/react-icons";
+import {
+  RhUiCheckIcon,
+  RhUiCloseCircleIcon,
+  RhUiPauseCircleFillIcon,
+} from "@patternfly/react-icons";
 import "./ToolStatus.css";
 
-export type ToolStatusVariant = "loading" | "success" | "error";
+export type ToolStatusVariant = "loading" | "success" | "error" | "pending";
 
 interface ToolStatusProps {
   variant: ToolStatusVariant;
@@ -32,6 +36,13 @@ export const ToolStatus: React.FC<ToolStatusProps> = ({ variant, label }) => {
         return (
           <RhUiCloseCircleIcon
             className="tool-status__icon tool-status__icon--error"
+            aria-hidden="true"
+          />
+        );
+      case "pending":
+        return (
+          <RhUiPauseCircleFillIcon
+            className="tool-status__icon tool-status__icon--pending"
             aria-hidden="true"
           />
         );

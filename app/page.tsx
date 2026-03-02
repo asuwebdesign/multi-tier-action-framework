@@ -15,6 +15,7 @@ type CodeSection =
   | "status-loading"
   | "status-success"
   | "status-error"
+  | "status-pending"
   | "tool-info"
   | "tool-warning"
   | "tool-danger";
@@ -93,21 +94,21 @@ export default function Home() {
 
             <div>
               <div className="variant-description">
-                <strong>Success State</strong>
+                <strong>Pending State</strong>
                 <p>
-                  Confirms successful completion of an AI agent action,
-                  signaling that the operation finished without errors.
+                  Indicates the AI agent is paused, awaiting user review and
+                  approval before proceeding with the requested action.
                 </p>
               </div>
               <div className="status-frame">
-                <ToolStatus variant="success" label="Analysis complete" />
+                <ToolStatus variant="pending" label="Awaiting approval" />
               </div>
               <ExpandableSection
                 toggleText={
-                  expandedCode["status-success"] ? "Hide code" : "Show code"
+                  expandedCode["status-pending"] ? "Hide code" : "Show code"
                 }
-                onToggle={() => toggleCode("status-success")}
-                isExpanded={expandedCode["status-success"]}
+                onToggle={() => toggleCode("status-pending")}
+                isExpanded={expandedCode["status-pending"]}
                 className="code-expandable"
               >
                 <SyntaxHighlighter
@@ -115,7 +116,7 @@ export default function Home() {
                   style={isDarkMode ? oneDark : oneLight}
                   customStyle={{ borderRadius: "4px" }}
                 >
-                  {`<ToolStatus variant="success" label="Analysis complete" />`}
+                  {`<ToolStatus variant="pending" label="Awaiting approval" />`}
                 </SyntaxHighlighter>
               </ExpandableSection>
             </div>
@@ -145,6 +146,35 @@ export default function Home() {
                   customStyle={{ borderRadius: "4px" }}
                 >
                   {`<ToolStatus variant="error" label="Action denied" />`}
+                </SyntaxHighlighter>
+              </ExpandableSection>
+            </div>
+
+            <div>
+              <div className="variant-description">
+                <strong>Success State</strong>
+                <p>
+                  Confirms successful completion of an AI agent action,
+                  signaling that the operation finished without errors.
+                </p>
+              </div>
+              <div className="status-frame">
+                <ToolStatus variant="success" label="Analysis complete" />
+              </div>
+              <ExpandableSection
+                toggleText={
+                  expandedCode["status-success"] ? "Hide code" : "Show code"
+                }
+                onToggle={() => toggleCode("status-success")}
+                isExpanded={expandedCode["status-success"]}
+                className="code-expandable"
+              >
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={isDarkMode ? oneDark : oneLight}
+                  customStyle={{ borderRadius: "4px" }}
+                >
+                  {`<ToolStatus variant="success" label="Analysis complete" />`}
                 </SyntaxHighlighter>
               </ExpandableSection>
             </div>

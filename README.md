@@ -191,22 +191,28 @@ The **ToolStatus** component provides real-time visual feedback on AI agent oper
 - Automatic "..." ellipsis suffix
 - Use for: Ongoing operations, waiting for responses, processing
 
-**Success State**
+**Pending State**
 
-- Green checkmark icon
-- Use for: Completed operations, successful approvals, confirmed actions
+- Pulsing pause icon animation (2-second loop)
+- Subtle opacity fade (100% → 25% → 100%)
+- Use for: Awaiting user review, paused for approval, pending user decision
 
 **Error State**
 
 - Red error icon
 - Use for: Failed operations, rejected actions, errors
 
+**Success State**
+
+- Green checkmark icon
+- Use for: Completed operations, successful approvals, confirmed actions
+
 #### ToolStatus Props
 
-| Prop      | Type                                | Required | Description         |
-| --------- | ----------------------------------- | -------- | ------------------- |
-| `variant` | `'loading' \| 'success' \| 'error'` | Yes      | Status state        |
-| `label`   | `string`                            | Yes      | Status message text |
+| Prop      | Type                                             | Required | Description         |
+| --------- | ------------------------------------------------ | -------- | ------------------- |
+| `variant` | `'loading' \| 'pending' \| 'error' \| 'success'` | Yes      | Status state        |
+| `label`   | `string`                                         | Yes      | Status message text |
 
 **Examples:**
 
@@ -217,14 +223,19 @@ The **ToolStatus** component provides real-time visual feedback on AI agent oper
 <ToolStatus variant="loading" label="Analyzing data" />;
 
 {
-  /* On success */
+  /* Awaiting approval */
 }
-<ToolStatus variant="success" label="Analysis complete" />;
+<ToolStatus variant="pending" label="Awaiting approval" />;
 
 {
   /* On error */
 }
 <ToolStatus variant="error" label="Action denied" />;
+
+{
+  /* On success */
+}
+<ToolStatus variant="success" label="Analysis complete" />;
 ```
 
 ### Checkbox Component
