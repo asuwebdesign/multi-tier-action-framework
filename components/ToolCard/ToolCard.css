@@ -1,14 +1,14 @@
 .tool-card {
   /* Local tokens */
-  --tool-card--MaxWidth: 400px;
+  --tool-card--MaxWidth: calc(25 * var(--pf-t--global--spacer--md));
   --tool-card--BorderWidth: var(--pf-t--global--border--width--strong);
   --tool-card--Padding: var(--pf-t--global--spacer--md);
   --tool-card--Gap: var(--pf-t--global--spacer--md);
   --tool-card--actions--Gap: var(--pf-t--global--spacer--sm);
   --tool-card--icon--Size: var(--pf-t--global--icon--size--lg);
-  --tool-card--animation--Duration: 0.25s;
-  --tool-card--animation--Duration--fast: 0.1s;
-  --tool-card--animation--Easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --tool-card--animation--Duration: var(--pf-t--global--motion--duration--md);
+  --tool-card--animation--Duration--fast: var(--pf-t--global--motion--duration--sm);
+  --tool-card--animation--Easing: var(--pf-t--global--motion--timing-function--default);
   --tool-card--expandable--TranslateY: var(--pf-t--global--spacer--sm);
 
   max-width: var(--tool-card--MaxWidth);
