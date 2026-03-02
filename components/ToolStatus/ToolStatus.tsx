@@ -18,24 +18,21 @@ export const ToolStatus: React.FC<ToolStatusProps> = ({ variant, label }) => {
           <Spinner
             className="tool-status__spinner"
             size="sm"
-            aria-label="Loading"
-            aria-valuetext={label}
+            aria-hidden="true"
           />
         );
       case "success":
         return (
           <RhUiCheckIcon
             className="tool-status__icon tool-status__icon--success"
-            aria-label="Success"
-            role="img"
+            aria-hidden="true"
           />
         );
       case "error":
         return (
           <RhUiCloseCircleIcon
             className="tool-status__icon tool-status__icon--error"
-            aria-label="Error"
-            role="img"
+            aria-hidden="true"
           />
         );
     }
