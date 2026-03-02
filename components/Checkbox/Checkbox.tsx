@@ -54,7 +54,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
               )}
             </span>
           </FlexItem>
-          <FlexItem className="pf-v6-c-check__description">{label}</FlexItem>
+          <FlexItem>{label}</FlexItem>
         </Flex>
       </label>
     </div>
