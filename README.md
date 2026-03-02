@@ -6,7 +6,7 @@
 
 A Next.js application demonstrating a **context-aware Human-in-the-Loop (HITL) governance system** for AI agents. This framework provides tiered approval mechanisms that categorize AI agent actions by risk level, ensuring appropriate human oversight before execution.
 
-**Built specifically for Red Hat's PatternFly 6 design system**, this framework leverages PatternFly components and design tokens throughout to ensure consistency with enterprise applications using PatternFly.
+**Built specifically for Red Hat's PatternFly 6 design system**, this framework leverages PatternFly components and design tokens throughout to ensure consistency with enterprise applications using PatternFly. These components are **designed and optimized for use with the PatternFly Chatbot extension** (`@patternfly/chatbot`), providing generative AI chat components that integrate seamlessly into PatternFly-based conversational interfaces.
 
 ## Overview
 
@@ -200,6 +200,7 @@ The **ToolStatus** component provides real-time visual feedback on AI agent oper
   - Uses PatternFly React components (`@patternfly/react-core`, `@patternfly/react-icons`)
   - Implements PatternFly design tokens for spacing, typography, colors, and sizing
   - Ensures visual consistency with other PatternFly-based applications
+  - **Optimized for `@patternfly/chatbot`** - Components designed as generative AI chat extensions
 - **React Syntax Highlighter** - Code examples with Prism themes
 - **CSS Modules** - Scoped component styling with PatternFly design token integration
 
@@ -228,7 +229,9 @@ npm start
 
 ## Features
 
+- **PatternFly Chatbot Optimization**: Components designed specifically for `@patternfly/chatbot` integration
 - **PatternFly Integration**: Built entirely with PatternFly 6 components and design tokens
+- **Generative AI Chat Components**: Purpose-built for AI conversational interfaces requiring human approvals
 - **Dark Mode Support**: Full theming support via PatternFly's built-in dark theme (`pf-v6-theme-dark`)
 - **Responsive Design**: Components adapt to different screen sizes using PatternFly's responsive utilities
 - **Accessibility**: PatternFly components follow WCAG guidelines out of the box
@@ -237,15 +240,16 @@ npm start
 
 ## Use Cases
 
-This framework is ideal for **PatternFly-based applications** that need human-in-the-loop approval workflows:
+This framework is ideal for **PatternFly-based applications** that need human-in-the-loop approval workflows, particularly those using **`@patternfly/chatbot`**:
 
-1. **AI Agent Platforms**: Govern autonomous AI actions with human oversight
-2. **MCP Implementations**: Model Context Protocol tool approval workflows
-3. **Red Hat OpenShift/Kubernetes UIs**: Cluster operations requiring tiered approval
-4. **DevOps Automation**: CI/CD pipelines with risk-based human gates
-5. **Data Operations**: Database migrations, ETL jobs, sensitive data operations
-6. **Enterprise Chatbots**: LLM-powered assistants that need action approval
-7. **Red Hat Product Integrations**: Any Red Hat or PatternFly application requiring AI governance
+1. **PatternFly Chatbot Extensions**: Generative AI chat interfaces requiring action approvals
+2. **AI Agent Platforms**: Govern autonomous AI actions with human oversight
+3. **MCP Implementations**: Model Context Protocol tool approval workflows
+4. **Red Hat OpenShift/Kubernetes UIs**: Cluster operations requiring tiered approval
+5. **DevOps Automation**: CI/CD pipelines with risk-based human gates
+6. **Data Operations**: Database migrations, ETL jobs, sensitive data operations
+7. **Enterprise Chatbots**: LLM-powered assistants that need action approval
+8. **Red Hat Product Integrations**: Any Red Hat or PatternFly application requiring AI governance
 
 ## Project Structure
 
