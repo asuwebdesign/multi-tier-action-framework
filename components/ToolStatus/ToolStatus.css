@@ -1,7 +1,7 @@
 .tool-status {
   /* Local tokens */
   --tool-status--Gap: var(--pf-t--global--spacer--sm);
-  --tool-status--icon--Size: var(--pf-t--global--icon--size--font--sm);
+  --tool-status--icon--Size: var(--pf-t--global--icon--size--lg);
 
   gap: var(--tool-status--Gap);
 }

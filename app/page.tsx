@@ -11,9 +11,19 @@ import {
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./page.css";
 
+type CodeSection =
+  | "status-loading"
+  | "status-success"
+  | "status-error"
+  | "tool-info"
+  | "tool-warning"
+  | "tool-danger";
+
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [expandedCode, setExpandedCode] = useState<Record<string, boolean>>({});
+  const [expandedCode, setExpandedCode] = useState<
+    Partial<Record<CodeSection, boolean>>
+  >({});
 
   useEffect(() => {
     if (isDarkMode) {
@@ -23,7 +33,7 @@ export default function Home() {
     }
   }, [isDarkMode]);
 
-  const toggleCode = (key: string) => {
+  const toggleCode = (key: CodeSection) => {
     setExpandedCode((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
@@ -161,7 +171,7 @@ export default function Home() {
               <div className="card-frame">
                 <ToolCard
                   variant="info"
-                  expandableContent="This action will perform a data request outside your cluster. Review subsequent suggestions carefully to ensure cluster security."
+                  expandableContent="This content is visible only when the component is expanded."
                   onPrimaryClick={() => console.log("Info: Continue clicked")}
                   onSecondaryClick={() => console.log("Info: Cancel clicked")}
                 />
@@ -181,7 +191,7 @@ export default function Home() {
                 >
                   {`<ToolCard
   variant="info"
-  expandableContent="..."
+  expandableContent="This content is visible only when the component is expanded."
   onPrimaryClick={() => console.log('Info: Continue clicked')}
   onSecondaryClick={() => console.log('Info: Cancel clicked')}
 />`}
@@ -201,7 +211,7 @@ export default function Home() {
               <div className="card-frame">
                 <ToolCard
                   variant="warning"
-                  expandableContent="This action will perform a configuration update to your cluster. Please review the changes carefully before applying."
+                  expandableContent="This content is visible only when the component is expanded."
                   checkboxLabel="I understand the changes"
                   onPrimaryClick={() => console.log("Warning: Apply clicked")}
                   onSecondaryClick={() =>
@@ -224,7 +234,7 @@ export default function Home() {
                 >
                   {`<ToolCard
   variant="warning"
-  expandableContent="..."
+  expandableContent="This content is visible only when the component is expanded."
   checkboxLabel="I understand the changes"
   onPrimaryClick={() => console.log('Warning: Apply clicked')}
   onSecondaryClick={() => console.log('Warning: Cancel clicked')}
@@ -246,7 +256,7 @@ export default function Home() {
               <div className="card-frame">
                 <ToolCard
                   variant="danger"
-                  expandableContent="This action will perform a critical update to your cluster. This operation cannot be undone and may result in data loss."
+                  expandableContent="This content is visible only when the component is expanded."
                   onPrimaryClick={() => console.log("Danger: Approve clicked")}
                   onSecondaryClick={() => console.log("Danger: Cancel clicked")}
                 />
@@ -266,7 +276,7 @@ export default function Home() {
                 >
                   {`<ToolCard
   variant="danger"
-  expandableContent="..."
+  expandableContent="This content is visible only when the component is expanded."
   onPrimaryClick={() => console.log('Danger: Approve clicked')}
   onSecondaryClick={() => console.log('Danger: Cancel clicked')}
 />`}

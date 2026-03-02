@@ -29,7 +29,7 @@ interface ToolCardProps {
   title?: string;
   labelText?: string;
   description?: string;
-  expandableContent: React.ReactNode;
+  expandableContent?: React.ReactNode;
   expandableToggleText?: string;
   disclaimer?: string;
   checkboxLabel?: string;
@@ -42,7 +42,8 @@ interface ToolCardProps {
 const variantConfig = {
   info: {
     icon: RhUiLanguageFillIcon,
-    labelStatus: "info",
+    labelStatus: "info" as const,
+    buttonVariant: "primary" as const,
     defaultLabelText: "External interaction",
     defaultTitle: "External request",
     defaultDescription:
@@ -54,7 +55,8 @@ const variantConfig = {
   },
   warning: {
     icon: RhUiWarningFillIcon,
-    labelStatus: "warning",
+    labelStatus: "warning" as const,
+    buttonVariant: "warning" as const,
     defaultLabelText: "State change",
     defaultTitle: "Review required",
     defaultDescription:
@@ -65,7 +67,8 @@ const variantConfig = {
   },
   danger: {
     icon: RhUiErrorFillIcon,
-    labelStatus: "danger",
+    labelStatus: "danger" as const,
+    buttonVariant: "danger" as const,
     defaultLabelText: "High risk",
     defaultTitle: "Critical approval required",
     defaultDescription:
@@ -74,7 +77,7 @@ const variantConfig = {
     defaultDisclaimer: undefined,
     headerClass: "tool-card--danger",
   },
-};
+} as const;
 
 export const ToolCard: React.FC<ToolCardProps> = ({
   variant,
@@ -94,13 +97,6 @@ export const ToolCard: React.FC<ToolCardProps> = ({
   const [isChecked, setIsChecked] = useState(false);
   const config = variantConfig[variant];
   const Icon = config.icon;
-
-  // Determine button variant - info uses primary (no info variant), warning/danger use their respective variants
-  const getPrimaryButtonVariant = () => {
-    if (variant === "warning") return "warning";
-    if (variant === "danger") return "danger";
-    return "primary";
-  };
 
   return (
     <Card className={`tool-card ${config.headerClass}`}>
@@ -131,7 +127,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({
               </Flex>
             </FlexItem>
             <FlexItem>
-              <Label status={config.labelStatus as any} icon={null}>
+              <Label status={config.labelStatus} icon={null}>
                 {labelText || config.defaultLabelText}
               </Label>
             </FlexItem>
@@ -143,14 +139,16 @@ export const ToolCard: React.FC<ToolCardProps> = ({
           {description || config.defaultDescription}
         </p>
 
-        <ExpandableSection
-          toggleText={isExpanded ? "Hide details" : expandableToggleText}
-          onToggle={(_event, expanded) => setIsExpanded(expanded)}
-          isExpanded={isExpanded}
-          className="tool-card__expandable"
-        >
-          {expandableContent}
-        </ExpandableSection>
+        {expandableContent && (
+          <ExpandableSection
+            toggleText={isExpanded ? "Hide details" : expandableToggleText}
+            onToggle={(_event, expanded) => setIsExpanded(expanded)}
+            isExpanded={isExpanded}
+            className="tool-card__expandable"
+          >
+            {expandableContent}
+          </ExpandableSection>
+        )}
 
         {variant === "info" && (
           <p className="tool-card__disclaimer">
@@ -181,7 +179,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({
           </FlexItem>
           <FlexItem flex={{ default: "flex_1" }}>
             <Button
-              variant={getPrimaryButtonVariant() as any}
+              variant={config.buttonVariant}
               onClick={onPrimaryClick}
               isDisabled={variant === "danger" && !isChecked}
               className={`tool-card__button tool-card__primary-button tool-card__primary-button--${variant}`}

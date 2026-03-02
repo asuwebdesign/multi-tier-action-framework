@@ -5,7 +5,7 @@
   --tool-card--Padding: var(--pf-t--global--spacer--md);
   --tool-card--Gap: var(--pf-t--global--spacer--md);
   --tool-card--actions--Gap: var(--pf-t--global--spacer--sm);
-  --tool-card--icon--Size: var(--pf-t--global--icon--size--font--sm);
+  --tool-card--icon--Size: var(--pf-t--global--icon--size--lg);
   --tool-card--animation--Duration: 0.25s;
   --tool-card--animation--Duration--fast: 0.1s;
   --tool-card--animation--Easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -22,58 +22,53 @@
   display: none;
 }
 
+/* Variant-specific color variables */
 .tool-card--info {
-  border-color: var(--pf-t--global--color--status--info--default);
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--info--default) 5%,
-    transparent
+  --tool-card--variant--color: var(
+    --pf-t--global--color--status--info--default
   );
-}
-
-@media (prefers-color-scheme: dark) {
-  .tool-card--info {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--info--default) 10%,
-      transparent
-    );
-  }
+  --tool-card--variant--icon-color: var(
+    --pf-t--global--icon--color--status--info--default
+  );
 }
 
 .tool-card--warning {
-  border-color: var(--pf-t--global--color--status--warning--default);
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--warning--default) 5%,
-    transparent
+  --tool-card--variant--color: var(
+    --pf-t--global--color--status--warning--default
   );
-}
-
-@media (prefers-color-scheme: dark) {
-  .tool-card--warning {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--warning--default) 10%,
-      transparent
-    );
-  }
+  --tool-card--variant--icon-color: var(
+    --pf-t--global--icon--color--status--warning--default
+  );
 }
 
 .tool-card--danger {
-  border-color: var(--pf-t--global--color--status--danger--default);
+  --tool-card--variant--color: var(
+    --pf-t--global--color--status--danger--default
+  );
+  --tool-card--variant--icon-color: var(
+    --pf-t--global--icon--color--status--danger--default
+  );
+}
+
+/* Apply variant colors using custom properties */
+.tool-card--info,
+.tool-card--warning,
+.tool-card--danger {
+  border-color: var(--tool-card--variant--color);
   background: color-mix(
     in srgb,
-    var(--pf-t--global--color--status--danger--default) 5%,
+    var(--tool-card--variant--color) 5%,
     transparent
   );
 }
 
 @media (prefers-color-scheme: dark) {
+  .tool-card--info,
+  .tool-card--warning,
   .tool-card--danger {
     background: color-mix(
       in srgb,
-      var(--pf-t--global--color--status--danger--default) 10%,
+      var(--tool-card--variant--color) 10%,
       transparent
     );
   }
@@ -107,16 +102,10 @@
   font-size: var(--tool-card--icon--Size);
 }
 
-.tool-card__icon--info {
-  color: var(--pf-t--global--icon--color--status--info--default);
-}
-
-.tool-card__icon--warning {
-  color: var(--pf-t--global--icon--color--status--warning--default);
-}
-
+.tool-card__icon--info,
+.tool-card__icon--warning,
 .tool-card__icon--danger {
-  color: var(--pf-t--global--icon--color--status--danger--default);
+  color: var(--tool-card--variant--icon-color);
 }
 
 .tool-card__title {
@@ -185,112 +174,38 @@
 }
 
 /* Expandable section toggle button */
-.tool-card--info .pf-v6-c-expandable-section__toggle button {
+[class*="tool-card--"] .pf-v6-c-expandable-section__toggle button {
   background: color-mix(
     in srgb,
-    var(--pf-t--global--color--status--info--default) 10%,
+    var(--tool-card--variant--color) 10%,
     transparent
   );
   color: var(--pf-t--global--text--color--regular);
 }
 
-.tool-card--info .pf-v6-c-expandable-section__toggle button:hover,
-.tool-card--info .pf-v6-c-expandable-section__toggle button:focus {
+[class*="tool-card--"] .pf-v6-c-expandable-section__toggle button:hover,
+[class*="tool-card--"] .pf-v6-c-expandable-section__toggle button:focus {
   background: color-mix(
     in srgb,
-    var(--pf-t--global--color--status--info--default) 20%,
+    var(--tool-card--variant--color) 20%,
     transparent
   );
 }
 
 @media (prefers-color-scheme: dark) {
-  .tool-card--info .pf-v6-c-expandable-section__toggle button {
+  [class*="tool-card--"] .pf-v6-c-expandable-section__toggle button {
     background: color-mix(
       in srgb,
-      var(--pf-t--global--color--status--info--default) 15%,
+      var(--tool-card--variant--color) 15%,
       transparent
     );
   }
 
-  .tool-card--info .pf-v6-c-expandable-section__toggle button:hover,
-  .tool-card--info .pf-v6-c-expandable-section__toggle button:focus {
+  [class*="tool-card--"] .pf-v6-c-expandable-section__toggle button:hover,
+  [class*="tool-card--"] .pf-v6-c-expandable-section__toggle button:focus {
     background: color-mix(
       in srgb,
-      var(--pf-t--global--color--status--info--default) 25%,
-      transparent
-    );
-  }
-}
-
-.tool-card--warning .pf-v6-c-expandable-section__toggle button {
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--warning--default) 10%,
-    transparent
-  );
-  color: var(--pf-t--global--text--color--regular);
-}
-
-.tool-card--warning .pf-v6-c-expandable-section__toggle button:hover,
-.tool-card--warning .pf-v6-c-expandable-section__toggle button:focus {
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--warning--default) 20%,
-    transparent
-  );
-}
-
-@media (prefers-color-scheme: dark) {
-  .tool-card--warning .pf-v6-c-expandable-section__toggle button {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--warning--default) 15%,
-      transparent
-    );
-  }
-
-  .tool-card--warning .pf-v6-c-expandable-section__toggle button:hover,
-  .tool-card--warning .pf-v6-c-expandable-section__toggle button:focus {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--warning--default) 25%,
-      transparent
-    );
-  }
-}
-
-.tool-card--danger .pf-v6-c-expandable-section__toggle button {
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--danger--default) 10%,
-    transparent
-  );
-  color: var(--pf-t--global--text--color--regular);
-}
-
-.tool-card--danger .pf-v6-c-expandable-section__toggle button:hover,
-.tool-card--danger .pf-v6-c-expandable-section__toggle button:focus {
-  background: color-mix(
-    in srgb,
-    var(--pf-t--global--color--status--danger--default) 20%,
-    transparent
-  );
-}
-
-@media (prefers-color-scheme: dark) {
-  .tool-card--danger .pf-v6-c-expandable-section__toggle button {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--danger--default) 15%,
-      transparent
-    );
-  }
-
-  .tool-card--danger .pf-v6-c-expandable-section__toggle button:focus,
-  .tool-card--danger .pf-v6-c-expandable-section__toggle button:hover {
-    background: color-mix(
-      in srgb,
-      var(--pf-t--global--color--status--danger--default) 25%,
+      var(--tool-card--variant--color) 25%,
       transparent
     );
   }
