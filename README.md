@@ -24,6 +24,19 @@ This approach balances automation efficiency with safety, allowing AI agents to 
 
 The **ToolCard** is the primary approval interface, featuring three risk-based variants:
 
+<table>
+<tr>
+<td width="50%">
+<strong>Light Mode</strong><br/>
+<img src="components/ToolCard/preview-light.png" alt="ToolCard Light Mode Preview" />
+</td>
+<td width="50%">
+<strong>Dark Mode</strong><br/>
+<img src="components/ToolCard/preview-dark.png" alt="ToolCard Dark Mode Preview" />
+</td>
+</tr>
+</table>
+
 #### Info Tier - External Interaction
 
 For **low-risk actions** involving external API calls or data retrieval outside the private environment.
@@ -147,6 +160,19 @@ For **high-risk actions** with potentially destructive or irreversible consequen
 ### ToolStatus Component
 
 The **ToolStatus** component provides real-time visual feedback on AI agent operation states.
+
+<table>
+<tr>
+<td width="50%">
+<strong>Light Mode</strong><br/>
+<img src="components/ToolStatus/preview-light.png" alt="ToolStatus Light Mode Preview" />
+</td>
+<td width="50%">
+<strong>Dark Mode</strong><br/>
+<img src="components/ToolStatus/preview-dark.png" alt="ToolStatus Dark Mode Preview" />
+</td>
+</tr>
+</table>
 
 #### Variants
 
