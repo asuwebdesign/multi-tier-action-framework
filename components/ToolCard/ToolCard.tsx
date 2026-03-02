@@ -9,7 +9,6 @@ import {
   CardFooter,
   Label,
   Button,
-  Checkbox,
   ExpandableSection,
   Flex,
   FlexItem,
@@ -20,6 +19,7 @@ import {
   RhUiWarningFillIcon,
   RhUiErrorFillIcon,
 } from "@patternfly/react-icons";
+import { Checkbox } from "@/components/Checkbox";
 import "./ToolCard.css";
 
 export type ToolCardVariant = "info" | "warning" | "danger";
@@ -167,7 +167,9 @@ export const ToolCard: React.FC<ToolCardProps> = ({
         {variant === "danger" && (
           <Checkbox
             id={`${variant}-checkbox`}
-            label={checkboxLabel || config.defaultCheckboxLabel}
+            label={
+              checkboxLabel || config.defaultCheckboxLabel || "I understand"
+            }
             isChecked={isChecked}
             onChange={(_event, checked) => setIsChecked(checked)}
             className="tool-card__checkbox"

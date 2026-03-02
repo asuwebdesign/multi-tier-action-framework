@@ -1,0 +1,137 @@
+.custom-checkbox {
+  /* Local tokens */
+  --custom-checkbox--box--Size: var(--pf-t--global--icon--size--xl);
+  --custom-checkbox--icon--Size: var(--pf-t--global--icon--size--lg);
+  --custom-checkbox--BorderRadius: var(--pf-t--global--border--radius--tiny);
+  --custom-checkbox--BorderWidth: var(--pf-t--global--border--width--regular);
+  --custom-checkbox--Gap: var(
+    --pf-t--global--spacer--gap--text-to-element--default
+  );
+
+  /* Unchecked colors */
+  --custom-checkbox--BorderColor: var(--pf-t--global--border--color--default);
+  --custom-checkbox--Background: var(
+    --pf-t--global--background--color--primary--default
+  );
+
+  /* Checked colors */
+  --custom-checkbox--checked--Background: var(
+    --pf-t--global--color--brand--default
+  );
+  --custom-checkbox--checked--BorderColor: var(
+    --pf-t--global--color--brand--default
+  );
+  --custom-checkbox--checked--IconColor: var(
+    --pf-t--global--icon--color--on-brand--default
+  );
+
+  /* Hover colors */
+  --custom-checkbox--hover--BorderColor: var(
+    --pf-t--global--border--color--hover
+  );
+  --custom-checkbox--checked--hover--Background: var(
+    --pf-t--global--color--brand--hover
+  );
+
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--custom-checkbox--Gap);
+  position: relative;
+}
+
+/* Hide native checkbox but keep it accessible */
+.custom-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Label wraps both the visual box and text */
+.custom-checkbox__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--custom-checkbox--Gap);
+  cursor: pointer;
+  font-family: var(--pf-t--global--font--family--body);
+  font-size: var(--pf-t--global--font--size--body--default);
+  line-height: var(--pf-t--global--line-height--body);
+  color: var(--pf-t--global--text--color--regular);
+  user-select: none;
+}
+
+/* Visual checkbox box - 24x24px */
+.custom-checkbox__box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--custom-checkbox--box--Size);
+  height: var(--custom-checkbox--box--Size);
+  min-width: var(--custom-checkbox--box--Size);
+  min-height: var(--custom-checkbox--box--Size);
+  border-radius: var(--custom-checkbox--BorderRadius);
+  border: var(--custom-checkbox--BorderWidth) solid
+    var(--custom-checkbox--BorderColor);
+  background: var(--custom-checkbox--Background);
+  transition: all var(--pf-t--global--motion--duration--sm)
+    var(--pf-t--global--motion--timing-function--default);
+}
+
+/* Checked state */
+.custom-checkbox__box--checked {
+  background: var(--custom-checkbox--checked--Background);
+  border-color: var(--custom-checkbox--checked--BorderColor);
+}
+
+/* Icon inside the box - 16x16px */
+.custom-checkbox__icon {
+  width: var(--custom-checkbox--icon--Size);
+  height: var(--custom-checkbox--icon--Size);
+  font-size: var(--custom-checkbox--icon--Size);
+  color: var(--custom-checkbox--checked--IconColor);
+}
+
+/* Hover states */
+.custom-checkbox__label:hover .custom-checkbox__box {
+  border-color: var(--custom-checkbox--hover--BorderColor);
+}
+
+.custom-checkbox__label:hover .custom-checkbox__box--checked {
+  background: var(--custom-checkbox--checked--hover--Background);
+  border-color: var(--custom-checkbox--checked--hover--Background);
+}
+
+/* Focus state - visible keyboard indicator */
+.custom-checkbox__input:focus-visible
+  + .custom-checkbox__label
+  .custom-checkbox__box {
+  outline: 2px solid var(--pf-t--global--color--brand--default);
+  outline-offset: 2px;
+}
+
+/* Active/pressed state */
+.custom-checkbox__input:active + .custom-checkbox__label .custom-checkbox__box {
+  transform: scale(0.95);
+}
+
+/* Disabled state (future-proofing) */
+.custom-checkbox__input:disabled + .custom-checkbox__label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.custom-checkbox__input:disabled
+  + .custom-checkbox__label
+  .custom-checkbox__box {
+  background: var(--pf-t--global--background--color--disabled--default);
+  border-color: var(--pf-t--global--border--color--disabled);
+}
+
+/* Text label */
+.custom-checkbox__text {
+  flex: 1;
+}
