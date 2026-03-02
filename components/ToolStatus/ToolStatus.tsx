@@ -14,14 +14,29 @@ export const ToolStatus: React.FC<ToolStatusProps> = ({ variant, label }) => {
   const renderIcon = () => {
     switch (variant) {
       case "loading":
-        return <Spinner className="tool-status__spinner" />;
+        return (
+          <Spinner
+            className="tool-status__spinner"
+            size="sm"
+            aria-label="Loading"
+            aria-valuetext={label}
+          />
+        );
       case "success":
         return (
-          <RhUiCheckIcon className="tool-status__icon tool-status__icon--success" />
+          <RhUiCheckIcon
+            className="tool-status__icon tool-status__icon--success"
+            aria-label="Success"
+            role="img"
+          />
         );
       case "error":
         return (
-          <RhUiCloseCircleIcon className="tool-status__icon tool-status__icon--error" />
+          <RhUiCloseCircleIcon
+            className="tool-status__icon tool-status__icon--error"
+            aria-label="Error"
+            role="img"
+          />
         );
     }
   };

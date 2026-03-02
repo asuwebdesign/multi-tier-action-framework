@@ -1,0 +1,551 @@
+[     375ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[     401ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="page.tsx">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+                <Home params={Promise} searchParams={Promise}>
+                  <div>
+                  <main className="page-main">
+                    <div>
+                    <section className="page-section">
+                      <h2>
+                      <p>
+                      <div className="page-conte...">
+                        <div>
+                          <div>
+                          <div>
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-17724661037307uqoerj5ldq"
+-                                     aria-controls="expandable-section-content-17724661034440injzhfc0t4j"
++                                     id="expandable-section-toggle-1772466103730bbd6ihhzg2"
+-                                     id="expandable-section-toggle-1772466103444jm20fuzp58m"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-1"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-10"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-17724661037307uqoerj5ldq"
+-                               id="expandable-section-content-17724661034440injzhfc0t4j"
++                               aria-labelledby="expandable-section-toggle-1772466103730bbd6ihhzg2"
+-                               aria-labelledby="expandable-section-toggle-1772466103444jm20fuzp58m"
+                                role="region"
+                              >
+                        <div>
+                          <div>
+                          <div>
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-1772466103742q1x925rzjvd"
+-                                     aria-controls="expandable-section-content-1772466103446pwmwp66g3wg"
++                                     id="expandable-section-toggle-1772466103742urqmapvddt"
+-                                     id="expandable-section-toggle-1772466103446y25x9qu8et9"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-3"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-11"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-1772466103742q1x925rzjvd"
+-                               id="expandable-section-content-1772466103446pwmwp66g3wg"
++                               aria-labelledby="expandable-section-toggle-1772466103742urqmapvddt"
+-                               aria-labelledby="expandable-section-toggle-1772466103446y25x9qu8et9"
+                                role="region"
+                              >
+                        <div>
+                          <div>
+                          <div>
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-1772466103745dprcj5ljpb"
+-                                     aria-controls="expandable-section-content-1772466103448mjs6e017q9d"
++                                     id="expandable-section-toggle-1772466103745dcmuja7hkgs"
+-                                     id="expandable-section-toggle-1772466103448v1ihm2cgkle"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-5"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-12"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-1772466103745dprcj5ljpb"
+-                               id="expandable-section-content-1772466103448mjs6e017q9d"
++                               aria-labelledby="expandable-section-toggle-1772466103745dcmuja7hkgs"
+-                               aria-labelledby="expandable-section-toggle-1772466103448v1ihm2cgkle"
+                                role="region"
+                              >
+                    <section className="page-section">
+                      <h2>
+                      <p>
+                      <div className="page-varia...">
+                        <div>
+                          <div>
+                          ...
+                            <Card className="tool-card ...">
+                              <CardBase className="tool-card ..." innerRef={null}>
+                                <div
+                                  ref={null}
+                                  id=""
+                                  className="pf-v6-c-card tool-card tool-card--info"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe={true}
++                                 data-ouia-component-id="OUIA-Generated-Card-1"
+-                                 data-ouia-component-id="OUIA-Generated-Card-4"
+                                >
+                                  <CardHeader>
+                                  <CardBody>
+                                    <div className="pf-v6-c-ca...">
+                                      <p>
+                                      <ExpandableSection toggleText="View details" onToggle={function onToggle} ...>
+                                        <div className="pf-v6-c-ex...">
+                                          <div className="pf-v6-c-ex...">
+                                            <Button variant="link" aria-expanded={false} aria-controls="expandable..." ...>
+                                              <ButtonBase innerRef={null} variant="link" aria-expanded={false} ...>
+                                                <button
+                                                  aria-expanded={false}
++                                                 aria-controls="expandable-section-content-1772466103752wq7stb9dkeb"
+-                                                 aria-controls="expandable-section-content-17724661034520zlaisa83wag"
++                                                 id="expandable-section-toggle-1772466103752ct0jkm4y5w8"
+-                                                 id="expandable-section-toggle-1772466103452p8i9h0r8a9"
+                                                  onClick={function onClick}
+                                                  aria-labelledby={undefined}
+                                                  aria-label={null}
+                                                  className="pf-v6-c-button pf-m-link"
+                                                  disabled={false}
+                                                  tabIndex={undefined}
+                                                  type="button"
+                                                  role={undefined}
+                                                  ref={null}
+                                                  data-ouia-component-type="PF6/Button"
+                                                  data-ouia-safe={true}
++                                                 data-ouia-component-id="OUIA-Generated-Button-link-7"
+-                                                 data-ouia-component-id="OUIA-Generated-Button-link-13"
+                                                >
+                                          <div
+                                            ref={{current:null}}
+                                            className="pf-v6-c-expandable-section__content"
+                                            hidden={true}
++                                           id="expandable-section-content-1772466103752wq7stb9dkeb"
+-                                           id="expandable-section-content-17724661034520zlaisa83wag"
++                                           aria-labelledby="expandable-section-toggle-1772466103752ct0jkm4y5w8"
+-                                           aria-labelledby="expandable-section-toggle-1772466103452p8i9h0r8a9"
+                                            role="region"
+                                          >
++                                           This content is visible only when the component is expanded.
+                                      ...
+                                  ...
+                                    <div className="pf-v6-l-fl..." style={undefined}>
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="tertiary" onClick={function onSecondaryClick} ...>
+                                            <ButtonBase innerRef={null} variant="tertiary" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onSecondaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-tertiary tool-card__button"
+                                                disabled={false}
+                                                tabIndex={undefined}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-1"
+-                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-4"
+                                              >
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="primary" onClick={function onPrimaryClick} isDisabled={false} ...>
+                                            <ButtonBase innerRef={null} variant="primary" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onPrimaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-primary tool-card__button tool-card__pr..."
+                                                disabled={false}
+                                                tabIndex={undefined}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-primary-1"
+-                                               data-ouia-component-id="OUIA-Generated-Button-primary-2"
+                                              >
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-1772466103753kwi0i8v901g"
+-                                     aria-controls="expandable-section-content-1772466103453g9umwsukrtp"
++                                     id="expandable-section-toggle-1772466103753b1ydkvt9l96"
+-                                     id="expandable-section-toggle-1772466103453hpkehwfo9ht"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-9"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-14"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-1772466103753kwi0i8v901g"
+-                               id="expandable-section-content-1772466103453g9umwsukrtp"
++                               aria-labelledby="expandable-section-toggle-1772466103753b1ydkvt9l96"
+-                               aria-labelledby="expandable-section-toggle-1772466103453hpkehwfo9ht"
+                                role="region"
+                              >
+                        <div>
+                          <div>
+                          ...
+                            <Card className="tool-card ...">
+                              <CardBase className="tool-card ..." innerRef={null}>
+                                <div
+                                  ref={null}
+                                  id=""
+                                  className="pf-v6-c-card tool-card tool-card--warning"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe={true}
++                                 data-ouia-component-id="OUIA-Generated-Card-3"
+-                                 data-ouia-component-id="OUIA-Generated-Card-5"
+                                >
+                                  <CardHeader>
+                                  <CardBody>
+                                    <div className="pf-v6-c-ca...">
+                                      <p>
+                                      <ExpandableSection toggleText="View details" onToggle={function onToggle} ...>
+                                        <div className="pf-v6-c-ex...">
+                                          <div className="pf-v6-c-ex...">
+                                            <Button variant="link" aria-expanded={false} aria-controls="expandable..." ...>
+                                              <ButtonBase innerRef={null} variant="link" aria-expanded={false} ...>
+                                                <button
+                                                  aria-expanded={false}
++                                                 aria-controls="expandable-section-content-1772466103777bw49c0qv86u"
+-                                                 aria-controls="expandable-section-content-1772466103459b4k0yee8fyd"
++                                                 id="expandable-section-toggle-17724661037775j3nv0gjnj"
+-                                                 id="expandable-section-toggle-1772466103459sq7xcixhvqq"
+                                                  onClick={function onClick}
+                                                  aria-labelledby={undefined}
+                                                  aria-label={null}
+                                                  className="pf-v6-c-button pf-m-link"
+                                                  disabled={false}
+                                                  tabIndex={undefined}
+                                                  type="button"
+                                                  role={undefined}
+                                                  ref={null}
+                                                  data-ouia-component-type="PF6/Button"
+                                                  data-ouia-safe={true}
++                                                 data-ouia-component-id="OUIA-Generated-Button-link-11"
+-                                                 data-ouia-component-id="OUIA-Generated-Button-link-15"
+                                                >
+                                          <div
+                                            ref={{current:null}}
+                                            className="pf-v6-c-expandable-section__content"
+                                            hidden={true}
++                                           id="expandable-section-content-1772466103777bw49c0qv86u"
+-                                           id="expandable-section-content-1772466103459b4k0yee8fyd"
++                                           aria-labelledby="expandable-section-toggle-17724661037775j3nv0gjnj"
+-                                           aria-labelledby="expandable-section-toggle-1772466103459sq7xcixhvqq"
+                                            role="region"
+                                          >
++                                           This content is visible only when the component is expanded.
+                                  ...
+                                    <div className="pf-v6-l-fl..." style={undefined}>
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="tertiary" onClick={function onSecondaryClick} ...>
+                                            <ButtonBase innerRef={null} variant="tertiary" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onSecondaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-tertiary tool-card__button"
+                                                disabled={false}
+                                                tabIndex={undefined}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-3"
+-                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-5"
+                                              >
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="warning" onClick={function onPrimaryClick} isDisabled={false} ...>
+                                            <ButtonBase innerRef={null} variant="warning" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onPrimaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-warning tool-card__button tool-card__pr..."
+                                                disabled={false}
+                                                tabIndex={undefined}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-warning-1"
+-                                               data-ouia-component-id="OUIA-Generated-Button-warning-2"
+                                              >
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-1772466103778wk6z98a9qu"
+-                                     aria-controls="expandable-section-content-1772466103460bkh0qej4tpi"
++                                     id="expandable-section-toggle-17724661037786hze605s5yn"
+-                                     id="expandable-section-toggle-1772466103460sqd0mblhpja"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-13"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-16"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-1772466103778wk6z98a9qu"
+-                               id="expandable-section-content-1772466103460bkh0qej4tpi"
++                               aria-labelledby="expandable-section-toggle-17724661037786hze605s5yn"
+-                               aria-labelledby="expandable-section-toggle-1772466103460sqd0mblhpja"
+                                role="region"
+                              >
+                        <div>
+                          <div>
+                          ...
+                            <Card className="tool-card ...">
+                              <CardBase className="tool-card ..." innerRef={null}>
+                                <div
+                                  ref={null}
+                                  id=""
+                                  className="pf-v6-c-card tool-card tool-card--danger"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe={true}
++                                 data-ouia-component-id="OUIA-Generated-Card-5"
+-                                 data-ouia-component-id="OUIA-Generated-Card-6"
+                                >
+                                  <CardHeader>
+                                  <CardBody>
+                                    <div className="pf-v6-c-ca...">
+                                      <p>
+                                      <ExpandableSection toggleText="View details" onToggle={function onToggle} ...>
+                                        <div className="pf-v6-c-ex...">
+                                          <div className="pf-v6-c-ex...">
+                                            <Button variant="link" aria-expanded={false} aria-controls="expandable..." ...>
+                                              <ButtonBase innerRef={null} variant="link" aria-expanded={false} ...>
+                                                <button
+                                                  aria-expanded={false}
++                                                 aria-controls="expandable-section-content-1772466103789ha16n33mvrt"
+-                                                 aria-controls="expandable-section-content-1772466103467v664reh6l69"
++                                                 id="expandable-section-toggle-1772466103789gg8g4t7r2qn"
+-                                                 id="expandable-section-toggle-17724661034673x4hozdj7fv"
+                                                  onClick={function onClick}
+                                                  aria-labelledby={undefined}
+                                                  aria-label={null}
+                                                  className="pf-v6-c-button pf-m-link"
+                                                  disabled={false}
+                                                  tabIndex={undefined}
+                                                  type="button"
+                                                  role={undefined}
+                                                  ref={null}
+                                                  data-ouia-component-type="PF6/Button"
+                                                  data-ouia-safe={true}
++                                                 data-ouia-component-id="OUIA-Generated-Button-link-15"
+-                                                 data-ouia-component-id="OUIA-Generated-Button-link-17"
+                                                >
+                                          <div
+                                            ref={{current:null}}
+                                            className="pf-v6-c-expandable-section__content"
+                                            hidden={true}
++                                           id="expandable-section-content-1772466103789ha16n33mvrt"
+-                                           id="expandable-section-content-1772466103467v664reh6l69"
++                                           aria-labelledby="expandable-section-toggle-1772466103789gg8g4t7r2qn"
+-                                           aria-labelledby="expandable-section-toggle-17724661034673x4hozdj7fv"
+                                            role="region"
+                                          >
++                                           This content is visible only when the component is expanded.
+                                      ...
+                                  ...
+                                    <div className="pf-v6-l-fl..." style={undefined}>
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="tertiary" onClick={function onSecondaryClick} ...>
+                                            <ButtonBase innerRef={null} variant="tertiary" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onSecondaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-tertiary tool-card__button"
+                                                disabled={false}
+                                                tabIndex={undefined}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-5"
+-                                               data-ouia-component-id="OUIA-Generated-Button-tertiary-6"
+                                              >
+                                      <FlexItem flex={{default:"f..."}}>
+                                        <div className="pf-m-flex-1" style={undefined}>
+                                          <Button variant="danger" onClick={function onPrimaryClick} isDisabled={true} ...>
+                                            <ButtonBase innerRef={null} variant="danger" ...>
+                                              <button
+                                                aria-expanded={undefined}
+                                                onClick={function onPrimaryClick}
+                                                aria-label={null}
+                                                className="pf-v6-c-button pf-m-danger tool-card__button tool-card__pri..."
+                                                disabled={true}
+                                                tabIndex={null}
+                                                type="button"
+                                                role={undefined}
+                                                ref={null}
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe={true}
++                                               data-ouia-component-id="OUIA-Generated-Button-danger-1"
+-                                               data-ouia-component-id="OUIA-Generated-Button-danger-2"
+                                              >
+                          <ExpandableSection toggleText="Show code" onToggle={function onToggle} isExpanded={undefined} ...>
+                            <div className="pf-v6-c-ex...">
+                              <div className="pf-v6-c-ex...">
+                                <Button variant="link" aria-expanded={undefined} aria-controls="expandable..." ...>
+                                  <ButtonBase innerRef={null} variant="link" aria-expanded={undefined} ...>
+                                    <button
+                                      aria-expanded={undefined}
++                                     aria-controls="expandable-section-content-1772466103791xyjgoeq0z5"
+-                                     aria-controls="expandable-section-content-1772466103467w6ak85s8nz"
++                                     id="expandable-section-toggle-1772466103791dtqmigwxnd"
+-                                     id="expandable-section-toggle-1772466103467u1jnopy0zf"
+                                      onClick={function onClick}
+                                      aria-labelledby={undefined}
+                                      aria-label={null}
+                                      className="pf-v6-c-button pf-m-link"
+                                      disabled={false}
+                                      tabIndex={undefined}
+                                      type="button"
+                                      role={undefined}
+                                      ref={null}
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe={true}
++                                     data-ouia-component-id="OUIA-Generated-Button-link-17"
+-                                     data-ouia-component-id="OUIA-Generated-Button-link-18"
+                                    >
+                              <div
+                                ref={{current:null}}
+                                className="pf-v6-c-expandable-section__content"
+                                hidden={true}
++                               id="expandable-section-content-1772466103791xyjgoeq0z5"
+-                               id="expandable-section-content-1772466103467w6ak85s8nz"
++                               aria-labelledby="expandable-section-toggle-1772466103791dtqmigwxnd"
+-                               aria-labelledby="expandable-section-toggle-1772466103467u1jnopy0zf"
+                                role="region"
+                              >
+            ...
+          ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[   83517ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   84520ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   85523ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   86526ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   87527ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   92530ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[   97532ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[  102535ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[  107538ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[  112542ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[  117546ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878
+[  122549ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=bsGHQmQwHmvDeCBI5NoSx' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_17643121._.js:10878

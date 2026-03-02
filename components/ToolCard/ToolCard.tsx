@@ -42,6 +42,7 @@ interface ToolCardProps {
 const variantConfig = {
   info: {
     icon: RhUiLanguageFillIcon,
+    iconLabel: "External interaction tier",
     labelStatus: "info" as const,
     buttonVariant: "primary" as const,
     defaultLabelText: "External interaction",
@@ -55,6 +56,7 @@ const variantConfig = {
   },
   warning: {
     icon: RhUiWarningFillIcon,
+    iconLabel: "State change tier",
     labelStatus: "warning" as const,
     buttonVariant: "warning" as const,
     defaultLabelText: "State change",
@@ -67,6 +69,7 @@ const variantConfig = {
   },
   danger: {
     icon: RhUiErrorFillIcon,
+    iconLabel: "High risk tier",
     labelStatus: "danger" as const,
     buttonVariant: "danger" as const,
     defaultLabelText: "High risk",
@@ -116,6 +119,8 @@ export const ToolCard: React.FC<ToolCardProps> = ({
                 <FlexItem>
                   <Icon
                     className={`tool-card__icon tool-card__icon--${variant}`}
+                    aria-label={config.iconLabel}
+                    role="img"
                   />
                 </FlexItem>
                 <FlexItem className="tool-card__title-container">
