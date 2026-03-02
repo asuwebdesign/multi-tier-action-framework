@@ -26,35 +26,35 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   };
 
   return (
-    <div className={`custom-checkbox ${className}`}>
+    <div className={`pf-v6-c-check ${className}`}>
       <input
         type="checkbox"
         id={id}
-        className="custom-checkbox__input"
+        className="pf-v6-c-check__input"
         checked={isChecked}
         onChange={handleChange}
       />
-      <label htmlFor={id} className="custom-checkbox__label">
+      <label htmlFor={id} className="pf-v6-c-check__label">
         <Flex
           alignItems={{ default: "alignItemsCenter" }}
           gap={{ default: "gapSm" }}
         >
-          <FlexItem>
+          <FlexItem className="pf-v6-c-check__box-wrapper">
             <span
-              className={`custom-checkbox__box ${
-                isChecked ? "custom-checkbox__box--checked" : ""
+              className={`pf-v6-c-check__box ${
+                isChecked ? "pf-m-checked" : ""
               }`}
               aria-hidden="true"
             >
               {isChecked && (
                 <RhUiCheckIcon
-                  className="custom-checkbox__icon"
+                  className="pf-v6-c-check__icon"
                   aria-hidden="true"
                 />
               )}
             </span>
           </FlexItem>
-          <FlexItem className="custom-checkbox__text">{label}</FlexItem>
+          <FlexItem className="pf-v6-c-check__description">{label}</FlexItem>
         </Flex>
       </label>
     </div>
