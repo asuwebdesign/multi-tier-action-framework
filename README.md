@@ -269,7 +269,6 @@ multi-tier-action-framework/
 │       ├── ToolStatus.tsx   # Status indicator component
 │       ├── ToolStatus.css   # Component-scoped styles
 │       └── index.ts         # Barrel export
-├── .screenshots/            # Design mockups (light/dark themes)
 ├── package.json
 ├── tsconfig.json
 ├── next.config.ts
@@ -306,10 +305,6 @@ Built specifically on **Red Hat's PatternFly 6 design system**, the framework in
 - Professional appearance that integrates seamlessly with other PatternFly applications
 - Battle-tested interaction patterns from Red Hat's design team
 - Design token architecture (`--pf-t--global--*`) for themeable, maintainable styling
-
-## Screenshots
-
-The `.screenshots/` directory contains design mockups in both light and dark themes showing the UI architecture and tier patterns.
 
 ## Contributing
 

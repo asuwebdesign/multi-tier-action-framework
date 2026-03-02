@@ -124,7 +124,6 @@ multi-tier-action-framework/
 │       ├── ToolStatus.tsx   # Main component
 │       ├── ToolStatus.css   # Component styles
 │       └── index.ts         # Barrel export
-├── .screenshots/            # Design mockups (light/dark themes)
 ├── package.json
 ├── tsconfig.json
 └── next.config.ts
