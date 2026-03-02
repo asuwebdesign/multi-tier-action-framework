@@ -1,7 +1,7 @@
 .tool-card {
   /* Local tokens */
   --tool-card--MaxWidth: 400px;
-  --tool-card--BorderWidth: var(--pf-t--global--border--width--box--default);
+  --tool-card--BorderWidth: var(--pf-t--global--border--width--strong);
   --tool-card--Padding: var(--pf-t--global--spacer--md);
   --tool-card--Gap: var(--pf-t--global--spacer--md);
   --tool-card--actions--Gap: var(--pf-t--global--spacer--sm);
