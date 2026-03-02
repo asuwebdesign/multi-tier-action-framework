@@ -1,8 +1,12 @@
 # Multi-Tier AI Action Framework
 
+> **Note**: This repository was developed with assistance from generative AI tools. While the codebase has been tested and reviewed, thorough evaluation and testing is recommended before production deployment.
+
 ## Project Overview
 
 This is a **Next.js 15** application showcasing a context-aware Human-in-the-Loop (HITL) governance system for AI agents. The framework provides a tiered approval mechanism that categorizes AI agent actions by risk level, ensuring appropriate human oversight before execution.
+
+**Built specifically for Red Hat's PatternFly 6 design system**, components are designed and optimized for use with the **PatternFly Chatbot extension** (`@patternfly/chatbot`), providing generative AI chat components that integrate seamlessly into PatternFly-based conversational interfaces.
 
 ## Architecture
 
@@ -51,6 +55,8 @@ A comprehensive approval card component with three risk-based variants:
 
 #### Key Features
 
+- **PatternFly Chatbot Optimization**: Designed specifically for `@patternfly/chatbot` integration
+- **Component Previews**: Light and dark mode preview images included in component directories
 - **Smooth Expandable Animations**: CSS Grid-based height transitions with fade-in and slide-up effects
 - **Expandable Details Section**: Collapsible content area for action specifics with smooth animations
 - **PatternFly Design Tokens**: Uses PF6 design tokens for spacing, sizing, and colors (no hardcoded values)
@@ -117,13 +123,17 @@ multi-tier-action-framework/
 │   └── page.css             # Page-specific styles
 ├── components/
 │   ├── ToolCard/
-│   │   ├── ToolCard.tsx     # Main component
-│   │   ├── ToolCard.css     # Component styles
-│   │   └── index.ts         # Barrel export
+│   │   ├── ToolCard.tsx       # Main component
+│   │   ├── ToolCard.css       # Component styles
+│   │   ├── preview-light.png  # Light mode preview
+│   │   ├── preview-dark.png   # Dark mode preview
+│   │   └── index.ts           # Barrel export
 │   └── ToolStatus/
-│       ├── ToolStatus.tsx   # Main component
-│       ├── ToolStatus.css   # Component styles
-│       └── index.ts         # Barrel export
+│       ├── ToolStatus.tsx     # Main component
+│       ├── ToolStatus.css     # Component styles
+│       ├── preview-light.png  # Light mode preview
+│       ├── preview-dark.png   # Dark mode preview
+│       └── index.ts           # Barrel export
 ├── package.json
 ├── tsconfig.json
 └── next.config.ts
@@ -267,13 +277,16 @@ The application uses PatternFly's built-in theming:
 
 ## Use Cases
 
-This framework is designed for:
+This framework is designed for **PatternFly-based applications** that need human-in-the-loop approval workflows, particularly those using **`@patternfly/chatbot`**:
 
-1. **AI Agent Governance**: Controlling AI actions in production environments
-2. **MCP (Model Context Protocol) Implementations**: Tiered approval for tool calls
-3. **Cluster Management UIs**: Kubernetes/OpenShift operations requiring approval
-4. **DevOps Automation**: CI/CD actions with risk-based human gates
-5. **Data Operations**: Database migrations, ETL jobs, data deletion workflows
+1. **PatternFly Chatbot Extensions**: Generative AI chat interfaces requiring action approvals
+2. **AI Agent Governance**: Controlling AI actions in production environments
+3. **MCP (Model Context Protocol) Implementations**: Tiered approval for tool calls
+4. **Red Hat OpenShift/Kubernetes UIs**: Cluster operations requiring tiered approval
+5. **DevOps Automation**: CI/CD actions with risk-based human gates
+6. **Data Operations**: Database migrations, ETL jobs, data deletion workflows
+7. **Enterprise Chatbots**: LLM-powered assistants requiring action approval
+8. **Red Hat Product Integrations**: Any Red Hat or PatternFly application requiring AI governance
 
 ## Future Enhancements
 
