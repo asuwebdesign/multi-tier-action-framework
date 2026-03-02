@@ -4,9 +4,6 @@
   --custom-checkbox--icon--Size: var(--pf-t--global--icon--size--lg);
   --custom-checkbox--BorderRadius: var(--pf-t--global--border--radius--tiny);
   --custom-checkbox--BorderWidth: var(--pf-t--global--border--width--regular);
-  --custom-checkbox--Gap: var(
-    --pf-t--global--spacer--gap--text-to-element--default
-  );
 
   /* Unchecked colors */
   --custom-checkbox--BorderColor: var(--pf-t--global--border--color--default);
@@ -33,9 +30,6 @@
     --pf-t--global--color--brand--hover
   );
 
-  display: inline-flex;
-  align-items: flex-start;
-  gap: var(--custom-checkbox--Gap);
   position: relative;
 }
 
@@ -53,9 +47,6 @@
 
 /* Label wraps both the visual box and text */
 .custom-checkbox__label {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--custom-checkbox--Gap);
   cursor: pointer;
   font-family: var(--pf-t--global--font--family--body);
   font-size: var(--pf-t--global--font--size--body--default);
@@ -129,9 +120,4 @@
   .custom-checkbox__box {
   background: var(--pf-t--global--background--color--disabled--default);
   border-color: var(--pf-t--global--border--color--disabled);
-}
-
-/* Text label */
-.custom-checkbox__text {
-  flex: 1;
 }

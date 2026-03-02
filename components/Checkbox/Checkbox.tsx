@@ -1,4 +1,5 @@
 import React from "react";
+import { Flex, FlexItem } from "@patternfly/react-core";
 import { RhUiCheckIcon } from "@patternfly/react-icons";
 import "./Checkbox.css";
 
@@ -34,20 +35,27 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         onChange={handleChange}
       />
       <label htmlFor={id} className="custom-checkbox__label">
-        <span
-          className={`custom-checkbox__box ${
-            isChecked ? "custom-checkbox__box--checked" : ""
-          }`}
-          aria-hidden="true"
+        <Flex
+          alignItems={{ default: "alignItemsCenter" }}
+          gap={{ default: "gapSm" }}
         >
-          {isChecked && (
-            <RhUiCheckIcon
-              className="custom-checkbox__icon"
+          <FlexItem>
+            <span
+              className={`custom-checkbox__box ${
+                isChecked ? "custom-checkbox__box--checked" : ""
+              }`}
               aria-hidden="true"
-            />
-          )}
-        </span>
-        <span className="custom-checkbox__text">{label}</span>
+            >
+              {isChecked && (
+                <RhUiCheckIcon
+                  className="custom-checkbox__icon"
+                  aria-hidden="true"
+                />
+              )}
+            </span>
+          </FlexItem>
+          <FlexItem className="custom-checkbox__text">{label}</FlexItem>
+        </Flex>
       </label>
     </div>
   );
