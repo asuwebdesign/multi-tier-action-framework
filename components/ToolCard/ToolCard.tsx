@@ -50,6 +50,7 @@ const variantConfig = {
     defaultDescription:
       "This action will perform a data request outside your cluster.",
     defaultPrimaryButtonText: "Continue",
+    defaultCheckboxLabel: undefined,
     defaultDisclaimer:
       "Disclaimer: This tool accesses external content. Review subsequent suggestions carefully to ensure cluster security.",
     headerClass: "tool-card--info",
@@ -64,6 +65,7 @@ const variantConfig = {
     defaultDescription:
       "This action will perform a configuration update to your cluster.",
     defaultPrimaryButtonText: "Apply",
+    defaultCheckboxLabel: undefined,
     defaultDisclaimer: undefined,
     headerClass: "tool-card--warning",
   },
@@ -77,6 +79,7 @@ const variantConfig = {
     defaultDescription:
       "This action will perform a critical update to your cluster.",
     defaultPrimaryButtonText: "Approve",
+    defaultCheckboxLabel: "I understand this action is destructive",
     defaultDisclaimer: undefined,
     headerClass: "tool-card--danger",
   },
@@ -164,7 +167,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({
         {variant === "danger" && (
           <Checkbox
             id={`${variant}-checkbox`}
-            label={checkboxLabel}
+            label={checkboxLabel || config.defaultCheckboxLabel}
             isChecked={isChecked}
             onChange={(_event, checked) => setIsChecked(checked)}
             className="tool-card__checkbox"

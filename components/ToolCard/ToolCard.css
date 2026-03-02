@@ -224,6 +224,21 @@
   /* No margin needed, handled by parent gap */
 }
 
+/* Ensure checkbox meets WCAG 2.5.8 minimum target size (24x24px) */
+.tool-card__checkbox .pf-v6-c-check__input {
+  min-width: 24px;
+  min-height: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.tool-card__checkbox .pf-v6-c-check__label {
+  /* Ensure label is clickable with adequate spacing */
+  padding: var(--pf-t--global--spacer--sm);
+  margin: calc(-1 * var(--pf-t--global--spacer--sm));
+  cursor: pointer;
+}
+
 /* Card footer */
 .tool-card .pf-v6-c-card__footer {
   padding: var(--tool-card--Padding);

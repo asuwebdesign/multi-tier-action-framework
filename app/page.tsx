@@ -212,7 +212,6 @@ export default function Home() {
                 <ToolCard
                   variant="warning"
                   expandableContent="This content is visible only when the component is expanded."
-                  checkboxLabel="I understand the changes"
                   onPrimaryClick={() => console.log("Warning: Apply clicked")}
                   onSecondaryClick={() =>
                     console.log("Warning: Cancel clicked")
@@ -235,7 +234,6 @@ export default function Home() {
                   {`<ToolCard
   variant="warning"
   expandableContent="This content is visible only when the component is expanded."
-  checkboxLabel="I understand the changes"
   onPrimaryClick={() => console.log('Warning: Apply clicked')}
   onSecondaryClick={() => console.log('Warning: Cancel clicked')}
 />`}

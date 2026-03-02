@@ -5,6 +5,21 @@
   z-index: 1000;
 }
 
+/* Ensure switch meets WCAG 2.5.8 minimum target size (24x24px) */
+.dark-mode-switch-container .pf-v6-c-switch__input {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.dark-mode-switch-container .pf-v6-c-switch__toggle {
+  min-height: 24px;
+}
+
+.dark-mode-switch-container .pf-v6-c-switch {
+  /* Ensure entire switch component has adequate clickable area */
+  padding: var(--pf-t--global--spacer--sm);
+}
+
 .page-main {
   padding: 3rem 2rem;
   max-width: 1200px;
