@@ -143,15 +143,17 @@
 
 /* Expandable section animations */
 .tool-card__expandable .pf-v6-c-expandable-section__content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows var(--tool-card--animation--Duration)
-    var(--tool-card--animation--Easing);
+  interpolate-size: allow-keywords;
+  height: 0;
   overflow: hidden;
+  transition:
+    height var(--tool-card--animation--Duration)
+      var(--tool-card--animation--Easing),
+    margin-top var(--tool-card--animation--Duration)
+      var(--tool-card--animation--Easing);
 }
 
 .tool-card__expandable .pf-v6-c-expandable-section__content > * {
-  min-height: 0;
   opacity: 0;
   transform: translateY(calc(-1 * var(--tool-card--expandable--TranslateY)));
   transition:
@@ -162,13 +164,7 @@
 }
 
 .tool-card__expandable.pf-m-expanded .pf-v6-c-expandable-section__content {
-  grid-template-rows: 1fr;
-  margin-top: var(--tool-card--Gap);
-  transition:
-    grid-template-rows var(--tool-card--animation--Duration)
-      var(--tool-card--animation--Easing),
-    margin-top var(--tool-card--animation--Duration)
-      var(--tool-card--animation--Easing);
+  height: auto;
 }
 
 .tool-card__expandable.pf-m-expanded .pf-v6-c-expandable-section__content > * {
