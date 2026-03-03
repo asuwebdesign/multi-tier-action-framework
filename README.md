@@ -238,44 +238,6 @@ The **ToolStatus** component provides real-time visual feedback on AI agent oper
 <ToolStatus variant="success" label="Analysis complete" />;
 ```
 
-### Checkbox Component
-
-The **Checkbox** component is a custom WCAG 2.2 Level AA compliant checkbox designed to replace PatternFly's native checkbox for improved accessibility.
-
-#### Features
-
-- **24×24px touch target** - Exceeds WCAG 2.5.8 minimum requirement (1.5rem)
-- **PatternFly v6 naming conventions** - Follows `pf-v6-c-check` component pattern
-- **Accessible** - Visually hidden native checkbox maintains full keyboard and screen reader support
-- **Styled with design tokens** - Uses PatternFly design tokens throughout
-- **Custom visual design** - Blue brand background when checked, white checkmark icon (16×16px)
-- **Hover and focus states** - Clear visual feedback for all interaction states
-
-#### Checkbox Props
-
-| Prop        | Type                                                                     | Required | Description                |
-| ----------- | ------------------------------------------------------------------------ | -------- | -------------------------- |
-| `id`        | `string`                                                                 | Yes      | Unique ID for the checkbox |
-| `label`     | `string`                                                                 | Yes      | Checkbox label text        |
-| `isChecked` | `boolean`                                                                | Yes      | Checked state              |
-| `onChange`  | `(event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void` | Yes      | Change handler             |
-| `className` | `string`                                                                 | No       | Additional CSS classes     |
-
-**Example:**
-
-```tsx
-import { Checkbox } from "@/components/Checkbox";
-
-const [isChecked, setIsChecked] = useState(false);
-
-<Checkbox
-  id="terms-checkbox"
-  label="I understand this action is destructive"
-  isChecked={isChecked}
-  onChange={(_event, checked) => setIsChecked(checked)}
-/>;
-```
-
 ## Technology Stack
 
 - **Next.js 15** - React framework with App Router
@@ -350,9 +312,9 @@ This framework is built with **accessibility-first principles** and achieves **W
 
 ### Touch Target Sizing
 
-- Custom Checkbox component: **24×24px** (WCAG 2.5.8 compliant)
-- All interactive elements meet minimum touch target requirements
-- Explicitly sized using rem values (1.5rem = 24px)
+- PatternFly Checkbox component: **WCAG 2.2 Level AA compliant** by default
+- All interactive elements meet minimum touch target requirements (24×24px minimum)
+- PatternFly design tokens ensure consistent, accessible sizing across all components
 
 ### Visual Design
 
@@ -391,10 +353,6 @@ multi-tier-action-framework/
 │   ├── page.tsx             # Interactive demo page
 │   └── page.css             # Page-specific styles
 ├── components/
-│   ├── Checkbox/
-│   │   ├── Checkbox.tsx     # Custom WCAG-compliant checkbox
-│   │   ├── Checkbox.css     # Checkbox styles (PatternFly v6 naming)
-│   │   └── index.ts         # Barrel export
 │   ├── ToolCard/
 │   │   ├── ToolCard.tsx     # Main approval card component
 │   │   ├── ToolCard.css     # Component-scoped styles

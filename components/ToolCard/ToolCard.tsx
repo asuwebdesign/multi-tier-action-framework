@@ -19,7 +19,7 @@ import {
   RhUiWarningFillIcon,
   RhUiErrorFillIcon,
 } from "@patternfly/react-icons";
-import { Checkbox } from "@/components/Checkbox";
+import { Checkbox } from "@patternfly/react-core";
 import "./ToolCard.css";
 
 export type ToolCardVariant = "info" | "warning" | "danger";
